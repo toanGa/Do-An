@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Obj">
+      <UniqueIdentifier>{921ba8dd-a34c-4eea-9500-a4ecb5a5a3e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\RestoreBackground">
+      <UniqueIdentifier>{9f691dc3-bef5-48bf-badc-122dbdbb3570}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Detect">
+      <UniqueIdentifier>{b6531e85-fa2a-403d-a4f0-3fccda201bb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Detect\DetectBinaryImage">
+      <UniqueIdentifier>{c8df66c8-15d0-4358-b9c3-9be4a0538a9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Detect\DetectGrayImage">
+      <UniqueIdentifier>{8ac7c07d-c878-4b55-9698-d39c5cb23137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Shape">
+      <UniqueIdentifier>{e9f8bba4-8f99-455f-b723-2151827c6ba9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Blob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingDetect.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="premetiveCode.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="findContours.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cannyTimbienanh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectBinary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectBinaryExam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FindPixel10x10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectGray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RestoreBackground.h">
+      <Filter>Obj\RestoreBackground</Filter>
+    </ClInclude>
+    <ClInclude Include="getValMaxInstance.h">
+      <Filter>Obj\RestoreBackground</Filter>
+    </ClInclude>
+    <ClInclude Include="testRestore.h">
+      <Filter>Obj\RestoreBackground</Filter>
+    </ClInclude>
+    <ClInclude Include="saliency.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CountWhiteValue.h">
+      <Filter>Obj\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Obj\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectMotobike.h">
+      <Filter>Obj\Detect\DetectBinaryImage</Filter>
+    </ClInclude>
+    <ClInclude Include="testDetectMotobike.h">
+      <Filter>Obj\Detect\DetectBinaryImage</Filter>
+    </ClInclude>
+    <ClInclude Include="testDetectMultiScale.h">
+      <Filter>Obj\Detect\DetectBinaryImage</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Blob.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DetectBinary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DetectGray.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RestoreBackground.cpp">
+      <Filter>Obj\RestoreBackground</Filter>
+    </ClCompile>
+    <ClCompile Include="getValMaxInstance.cpp">
+      <Filter>Obj\RestoreBackground</Filter>
+    </ClCompile>
+    <ClCompile Include="CountWhiteValue.cpp">
+      <Filter>Obj\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="DetectMotobike.cpp">
+      <Filter>Obj\Detect\DetectBinaryImage</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
