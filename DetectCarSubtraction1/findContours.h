@@ -60,7 +60,7 @@ std::string getImageType(int number)
 int main(int argc, char** argv)
 {
 	/// Load source image and convert it to gray
-	src = imread("imgframe5.png");
+	src = imread("imgframe1.png");
 
 	cout << " src type: " << getImageType(src.type()) << endl;
 	/// Convert image to gray and blur it
@@ -104,7 +104,7 @@ void thresh_callback(int, void*)
 	{
 		///Scalar color = Scalar(rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255));
 		Scalar color = Scalar(255, 255, 255);
-		drawContours(drawing, contours, i, color, 2, 8, hierarchy, 0, Point());
+		drawContours(drawing, contours, i, color, 2, 8, hierarchy, 0, Point());//2,8
 	}
 
 	/// Show in a window

@@ -22,21 +22,30 @@
     <ClInclude Include="Blob.h" />
     <ClInclude Include="cannyTimbienanh.h" />
     <ClInclude Include="CountWhiteValue.h" />
+    <ClInclude Include="CountWhiteVanTay.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DetectBinary.h" />
     <ClInclude Include="DetectBinaryExam.h" />
+    <ClInclude Include="detectCarAndMotobike.h" />
+    <ClInclude Include="detectCarCascadeExam.h" />
     <ClInclude Include="DetectGray.h" />
     <ClInclude Include="DetectMotobike.h" />
+    <ClInclude Include="detectTotalMovingArea.h" />
+    <ClInclude Include="fileGoc.h" />
     <ClInclude Include="findContours.h" />
     <ClInclude Include="FindPixel10x10.h" />
     <ClInclude Include="getValMaxInstance.h" />
     <ClInclude Include="MovingDetect.hpp" />
+    <ClInclude Include="mp4Export.h" />
+    <ClInclude Include="phanTichThongKe.h" />
     <ClInclude Include="RestoreBackground.h" />
     <ClInclude Include="saliency.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="testDetectMotobike.h" />
     <ClInclude Include="testDetectMultiScale.h" />
+    <ClInclude Include="testDetectOnMovingArea.h" />
     <ClInclude Include="testRestore.h" />
+    <ClInclude Include="testTrackMotobikeAndCar.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Blob.cpp" />
@@ -46,10 +55,49 @@
     <ClCompile Include="DetectMotobike.cpp" />
     <ClCompile Include="getValMaxInstance.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mp4Export.cpp" />
     <ClCompile Include="RestoreBackground.cpp" />
     <ClInclude Include="premetiveCode.h">
       <FileType>CppCode</FileType>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="cars.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="20170228-090949.mp4" />
+    <Media Include="20170301-073531.mp4" />
+    <Media Include="20170301-073635.mp4" />
+    <Media Include="20170301-073739.mp4" />
+    <Media Include="20170301-073843.mp4" />
+    <Media Include="20170301-073947.mp4" />
+    <Media Include="20170301-074051.mp4" />
+    <Media Include="20170301-074155.mp4" />
+    <Media Include="20170301-074259.mp4" />
+    <Media Include="CarsDrivingUnderBridge.mp4" />
+    <Media Include="F:\ubuntu\SET\DATN\project\TaiLieu_cars_detection_full\video_data\hamKimLien1.mp4" />
+    <Media Include="F:\ubuntu\SET\DATN\project\TaiLieu_cars_detection_full\video_data\hamKimLien2.mp4" />
+    <Media Include="F:\ubuntu\SET\DATN\project\TaiLieu_cars_detection_full\video_data\lech30do_2.mp4" />
+    <Media Include="F:\ubuntu\SET\DATN\project\TaiLieu_cars_detection_full\video_data\nuocngoai.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="a1.bmp" />
+    <Image Include="a2.bmp" />
+    <Image Include="a3.bmp" />
+    <Image Include="anh em.jpg" />
+    <Image Include="vantay\AS2.PNG" />
+    <Image Include="vantay\AT.PNG" />
+    <Image Include="vantay\UL2.PNG" />
+    <Image Include="vantay\UR.PNG" />
+    <Image Include="vantay\WC.PNG" />
+    <Image Include="vantay\WD2.PNG" />
+    <Image Include="vantay\WEL.PNG" />
+    <Image Include="vantay\WI2.PNG" />
+    <Image Include="vantay\WL.PNG" />
+    <Image Include="vantay\WP2.PNG" />
+    <Image Include="vantay\WS2.PNG" />
+    <Image Include="vantay\WT2.PNG" />
+    <Image Include="vantay\WX.PNG" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{75C3BA57-C0E5-47BE-BABA-9A913E9F69BE}</ProjectGuid>

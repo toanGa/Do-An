@@ -31,11 +31,32 @@
     <Filter Include="Obj\Shape">
       <UniqueIdentifier>{e9f8bba4-8f99-455f-b723-2151827c6ba9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Obj\PhanTichThongKe">
+      <UniqueIdentifier>{7b97684a-91a4-48ae-9944-30230bc36379}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Blob">
+      <UniqueIdentifier>{5faca193-7755-4af8-a868-5a2246e1bad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Detect\DetectCarHaar">
+      <UniqueIdentifier>{66971932-8044-4016-8934-33b5c8f7c57b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\VideoWriter">
+      <UniqueIdentifier>{e47ec21d-b4f9-46c8-9761-0c6b654ee51b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\Detect\DetectCarAndMotobik">
+      <UniqueIdentifier>{a64ef331-376b-4bd2-b249-29e75cc2c5d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj\VanTay">
+      <UniqueIdentifier>{7136e157-6b4a-4c20-a57c-898de9b38eaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\vantay">
+      <UniqueIdentifier>{8fbc66cf-2a65-417a-9304-3962552e7d66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\chungVanTay">
+      <UniqueIdentifier>{96128bbf-72be-4893-83f0-8d004bcfaa1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Blob.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MovingDetect.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -90,11 +111,38 @@
     <ClInclude Include="testDetectMultiScale.h">
       <Filter>Obj\Detect\DetectBinaryImage</Filter>
     </ClInclude>
+    <ClInclude Include="fileGoc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phanTichThongKe.h">
+      <Filter>Obj\PhanTichThongKe</Filter>
+    </ClInclude>
+    <ClInclude Include="Blob.h">
+      <Filter>Obj\Blob</Filter>
+    </ClInclude>
+    <ClInclude Include="testDetectOnMovingArea.h">
+      <Filter>Obj\Detect\DetectBinaryImage</Filter>
+    </ClInclude>
+    <ClInclude Include="detectCarCascadeExam.h">
+      <Filter>Obj\Detect\DetectCarHaar</Filter>
+    </ClInclude>
+    <ClInclude Include="detectTotalMovingArea.h">
+      <Filter>Obj\Detect\DetectBinaryImage</Filter>
+    </ClInclude>
+    <ClInclude Include="mp4Export.h">
+      <Filter>Obj\VideoWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="detectCarAndMotobike.h">
+      <Filter>Obj\Detect\DetectCarAndMotobik</Filter>
+    </ClInclude>
+    <ClInclude Include="CountWhiteVanTay.h">
+      <Filter>Obj\VanTay</Filter>
+    </ClInclude>
+    <ClInclude Include="testTrackMotobikeAndCar.h">
+      <Filter>Obj\Detect\DetectCarAndMotobik</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Blob.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -116,5 +164,113 @@
     <ClCompile Include="DetectMotobike.cpp">
       <Filter>Obj\Detect\DetectBinaryImage</Filter>
     </ClCompile>
+    <ClCompile Include="Blob.cpp">
+      <Filter>Obj\Blob</Filter>
+    </ClCompile>
+    <ClCompile Include="mp4Export.cpp">
+      <Filter>Obj\VideoWriter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="cars.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="20170301-074259.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="20170228-090949.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="20170301-073531.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="20170301-073635.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="20170301-073739.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="20170301-073843.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="20170301-073947.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="20170301-074051.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="20170301-074155.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="CarsDrivingUnderBridge.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="F:\ubuntu\SET\DATN\project\TaiLieu_cars_detection_full\video_data\hamKimLien2.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="F:\ubuntu\SET\DATN\project\TaiLieu_cars_detection_full\video_data\lech30do_2.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="F:\ubuntu\SET\DATN\project\TaiLieu_cars_detection_full\video_data\nuocngoai.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="F:\ubuntu\SET\DATN\project\TaiLieu_cars_detection_full\video_data\hamKimLien1.mp4">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="a1.bmp">
+      <Filter>Resource Files\vantay</Filter>
+    </Image>
+    <Image Include="a2.bmp">
+      <Filter>Resource Files\vantay</Filter>
+    </Image>
+    <Image Include="a3.bmp">
+      <Filter>Resource Files\vantay</Filter>
+    </Image>
+    <Image Include="anh em.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="vantay\AS2.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\AT.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\UL2.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\UR.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WC.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WD2.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WEL.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WI2.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WL.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WP2.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WS2.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WT2.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
+    <Image Include="vantay\WX.PNG">
+      <Filter>Resource Files\chungVanTay</Filter>
+    </Image>
   </ItemGroup>
 </Project>

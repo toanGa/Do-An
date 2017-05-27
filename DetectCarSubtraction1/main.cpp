@@ -8,7 +8,13 @@
 //#include "FindPixel10x10.h"
 //#include "testRestore.h"
 //#include"testDetectMotobike.h"
-#include"testDetectMultiScale.h"
+//#include"testDetectMultiScale.h"
+//#include "fileGoc.h"
+//#include "testDetectOnMovingArea.h"// using detect motobike area
+//#include"detectCarCascadeExam.h"
+//#include "detectTotalMovingArea.h" // just using subtraction algorithm
+//#include "detectCarAndMotobike.h"// car and motobike
+#include "CountWhiteVanTay.h"
 #if 0
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>

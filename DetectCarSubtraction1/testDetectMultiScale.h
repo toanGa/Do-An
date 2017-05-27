@@ -28,7 +28,7 @@ int main()
 	}
 
 	
-	MotoBinaryDetecter detecter = MotoBinaryDetecter(36, 100);
+	MotoBinaryDetecter detecter = MotoBinaryDetecter(16, 80);//36, 100
 	while (capVideo.isOpened())
 	{
 		Mat image;

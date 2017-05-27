@@ -45,7 +45,11 @@ int main(void) {
 	cv::namedWindow("imgThresh", cv::WINDOW_NORMAL);
 	cv::resizeWindow("imgThresh", 600, 400);
 	
+	cv::namedWindow("imgBinary", cv::WINDOW_NORMAL);
+	cv::resizeWindow("imgThresh", 600, 400);
 
+	cv::namedWindow("contourTest", cv::WINDOW_NORMAL);
+	cv::resizeWindow("contourTest", 600, 400);
 
 	system("pause");
 	cv::VideoCapture capVideo;
@@ -60,6 +64,7 @@ int main(void) {
 	int carCount = 0;
 	//CarsDrivingUnderBridge
 	//capVideo.open("CarsDrivingUnderBridge.mp4");
+	//20170301-074259
 	//20170301-073531
 	//20170301-073635
 	//20170301-073739
@@ -68,7 +73,7 @@ int main(void) {
 	//20170301-074051
 	//20170301-074155
 	//20170301-074259
-	capVideo.open("20170301-074259.mp4");
+	capVideo.open("hamKimLien1.mp4");
 
 	if (!capVideo.isOpened()) {                                                 // if unable to open video file
 		std::cout << "error reading video file" << std::endl << std::endl;      // show error message
@@ -84,6 +89,7 @@ int main(void) {
 
 	capVideo.read(imgFrame1);
 	capVideo.read(imgFrame2);
+	cv::imwrite("imgFrame1.png", imgFrame1);
 
 	int intHorizontalLinePosition = (int)std::round((double)imgFrame1.rows * 0.35);
 
@@ -116,15 +122,25 @@ int main(void) {
 		cv::GaussianBlur(imgFrame2Copy, imgFrame2Copy, cv::Size(5, 5), 0);
 
 		cv::absdiff(imgFrame1Copy, imgFrame2Copy, imgDifference);
-		// toan add
-		
-		
-		
 		cv::imshow("sub image", imgDifference);
+		// toan add
 		cv::threshold(imgDifference, imgThresh, 15, 255.0, CV_THRESH_BINARY);
+		
+#if 1		
+		cv::Mat testMat = imgFrame1.clone();
+		cv::cvtColor(testMat, testMat, CV_BGR2GRAY);
+		cv::GaussianBlur(testMat, testMat, cv::Size(5, 5), 0);
+		cv::threshold(testMat, testMat, 15, 255.0, CV_THRESH_BINARY);
 
-		cv::imshow("imgThresh", imgThresh);
+		cv::imshow("imgBinary", testMat);
+		//cv::waitKey(0);
+		std::vector<std::vector<cv::Point> > tmpcontours;
+		cv::findContours(testMat, tmpcontours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
+		drawAndShowContours(testMat.size(), tmpcontours, "contourTest");
+		//cv::waitKey(0);
+		tmpcontours.clear();
+#endif
 		cv::Mat structuringElement3x3 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
 		cv::Mat structuringElement5x5 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5, 5));
 		cv::Mat structuringElement7x7 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
@@ -135,7 +151,7 @@ int main(void) {
 			cv::dilate(imgThresh, imgThresh, structuringElement5x5);
 			cv::erode(imgThresh, imgThresh, structuringElement5x5);
 		}
-
+		cv::imshow("imgThresh", imgThresh);
 		cv::Mat imgThreshCopy = imgThresh.clone();
 
 		std::vector<std::vector<cv::Point> > contours;
@@ -150,7 +166,7 @@ int main(void) {
 			cv::convexHull(contours[i], convexHulls[i]);
 		}
 
-		///drawAndShowContours(imgThresh.size(), convexHulls, "imgConvexHulls");
+		drawAndShowContours(imgThresh.size(), convexHulls, "imgConvexHulls");
 
 		for (auto &convexHull : convexHulls) {
 			Blob possibleBlob(convexHull);
@@ -166,7 +182,7 @@ int main(void) {
 			}
 		}
 		
-		///drawAndShowContours(imgThresh.size(), currentFrameBlobs, "imgCurrentFrameBlobs");
+		drawAndShowContours(imgThresh.size(), currentFrameBlobs, "imgCurrentFrameBlobs");
 
 		if (blnFirstFrame == true) {
 			for (auto &currentFrameBlob : currentFrameBlobs) {
@@ -177,7 +193,7 @@ int main(void) {
 			matchCurrentFrameBlobsToExistingBlobs(blobs, currentFrameBlobs);
 		}
 
-		///drawAndShowContours(imgThresh.size(), blobs, "imgBlobs");
+		drawAndShowContours(imgThresh.size(), blobs, "imgBlobs");
 
 		imgFrame2Copy = imgFrame2.clone();          // get another copy of frame 2 since we changed the previous frame 2 copy in the processing above
 
