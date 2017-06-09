@@ -31,6 +31,7 @@
     <ClInclude Include="DetectGray.h" />
     <ClInclude Include="DetectMotobike.h" />
     <ClInclude Include="detectTotalMovingArea.h" />
+    <ClInclude Include="equalizeHistogramExam.h" />
     <ClInclude Include="fileGoc.h" />
     <ClInclude Include="findContours.h" />
     <ClInclude Include="FindPixel10x10.h" />

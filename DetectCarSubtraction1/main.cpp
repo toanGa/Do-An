@@ -14,7 +14,8 @@
 //#include"detectCarCascadeExam.h"
 //#include "detectTotalMovingArea.h" // just using subtraction algorithm
 //#include "detectCarAndMotobike.h"// car and motobike
-#include "CountWhiteVanTay.h"
+//#include "CountWhiteVanTay.h"
+#include "equalizeHistogramExam.h"
 #if 0
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>
