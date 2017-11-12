@@ -74,8 +74,6 @@ vector <Rect> MotoBinaryDetecter::getRectsDetected()
 	return diffObj;
 }
 
-
-
 void MotoBinaryDetecter::reduceRectDetect()
 {
 	diffObj.clear();// clear before process

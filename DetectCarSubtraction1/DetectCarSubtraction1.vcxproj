@@ -35,6 +35,7 @@
     <ClInclude Include="fileGoc.h" />
     <ClInclude Include="findContours.h" />
     <ClInclude Include="FindPixel10x10.h" />
+    <ClInclude Include="getRectMoving.h" />
     <ClInclude Include="getValMaxInstance.h" />
     <ClInclude Include="MovingDetect.hpp" />
     <ClInclude Include="mp4Export.h" />
@@ -99,6 +100,9 @@
     <Image Include="vantay\WS2.PNG" />
     <Image Include="vantay\WT2.PNG" />
     <Image Include="vantay\WX.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{75C3BA57-C0E5-47BE-BABA-9A913E9F69BE}</ProjectGuid>

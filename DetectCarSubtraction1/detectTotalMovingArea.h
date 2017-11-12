@@ -51,7 +51,7 @@ int main(void)
 	int carCount = 0;
 	//CarsDrivingUnderBridge
 	//capVideo.open("CarsDrivingUnderBridge.mp4");
-	capVideo.open("hamKimLien1.mp4");
+	capVideo.open("hamKimLien2.mp4");
 
 	if (!capVideo.isOpened())
 	{                                                 // if unable to open video file
@@ -85,7 +85,7 @@ int main(void)
 	int frameCount = 2;
 
 	Mp4Exporter videoExporter(Size(imgFrame1.cols, imgFrame1.rows), 15.0);
-	bool bCheck = videoExporter.open("detectMotobike.avi");
+	bool bCheck = videoExporter.open("detectMotobike_video2.avi");
 	while (capVideo.isOpened() && chCheckForEscKey != 27)
 	{
 

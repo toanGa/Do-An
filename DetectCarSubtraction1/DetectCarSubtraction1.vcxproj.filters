@@ -55,6 +55,12 @@
     <Filter Include="Resource Files\chungVanTay">
       <UniqueIdentifier>{96128bbf-72be-4893-83f0-8d004bcfaa1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="README">
+      <UniqueIdentifier>{2c8d3ea7-5e00-4b40-813d-7e0ce2bacb58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NeronNetwork">
+      <UniqueIdentifier>{12f4e095-38d9-4621-be35-7a55de89ddca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MovingDetect.hpp">
@@ -143,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="equalizeHistogramExam.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="getRectMoving.h">
+      <Filter>NeronNetwork</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -275,5 +284,10 @@
     <Image Include="vantay\WX.PNG">
       <Filter>Resource Files\chungVanTay</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt">
+      <Filter>README</Filter>
+    </Text>
   </ItemGroup>
 </Project>
