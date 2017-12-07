@@ -13,12 +13,12 @@
 //#include "testDetectOnMovingArea.h"// using detect motobike area
 //#include"detectCarCascadeExam.h"
 //#include "detectTotalMovingArea.h" // just using subtraction algorithm
-//#include "detectCarAndMotobike.h"// car and motobike
+#include "detectCarAndMotobike.h"// car and motobike
 //#include "CountWhiteVanTay.h"
 //#include "equalizeHistogramExam.h"
 
 //start using new method
-#include "getRectMoving.h"
+//#include "getRectMoving.h"
 #if 0
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>

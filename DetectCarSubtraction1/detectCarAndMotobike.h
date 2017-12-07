@@ -14,7 +14,7 @@
 #include "Blob.h"
 #include"mp4Export.h"
 #define SHOW_STEPS            // un-comment or comment this line to show steps or not
-
+#include <string.h>
 // global variables ///////////////////////////////////////////////////////////////////////////////
 const cv::Scalar SCALAR_BLACK = cv::Scalar(0.0, 0.0, 0.0);
 const cv::Scalar SCALAR_WHITE = cv::Scalar(255.0, 255.0, 255.0);
@@ -37,7 +37,7 @@ void drawListRectToMat(Mat &mat, vector<Rect> listRect);
 void drawListBlobToMat(Mat &mat, vector<Blob> listBlob);
 void assignCarDetectedForRect(Mat rootMat, Rect frameDetect, vector<Rect> &totalRectCars);
 
-
+void printInfo(vector<Blob> blobs, string info);
 
 String cars_cascade_name = "cars.xml";
 CascadeClassifier cars_cascade;
@@ -104,12 +104,13 @@ int main(void)
 	///Mp4Exporter videoExporter(Size(imgFrame1.cols, imgFrame1.rows), 15.0);
 	///bool bCheck = videoExporter.open("detectMotobikeAndCar.avi");
 
+	int instanceFrame = 0;
 
 
 
 	while (capVideo.isOpened() && chCheckForEscKey != 27)
 	{
-
+		instanceFrame++;
 		std::vector<Blob> currentFrameBlobs;
 		std::vector<Blob> exeptionBlobs;
 		std::vector<Rect> listRectCar;
@@ -199,7 +200,7 @@ int main(void)
 		}
 
 		drawAndShowContours(imgThresh.size(), currentFrameBlobs, "imgCurrentFrameBlobs");
-
+		printInfo(currentFrameBlobs, "current blob at frame" + to_string(instanceFrame));
 		if (blnFirstFrame == true)
 		{
 			for (auto &currentFrameBlob : currentFrameBlobs)
@@ -211,6 +212,9 @@ int main(void)
 		{
 			matchCurrentFrameBlobsToExistingBlobs(blobs, currentFrameBlobs);
 		}
+
+		//printInfo(blobs, "after matching blob at frame " + to_string(instanceFrame));
+
 
 		drawAndShowContours(imgThresh.size(), blobs, "imgBlobs");
 
@@ -274,7 +278,7 @@ int main(void)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs)
 {
-
+	cout << "match current blob to existing blob" << endl;
 	for (auto &existingBlob : existingBlobs)
 	{
 
@@ -308,10 +312,12 @@ void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std
 		if (dblLeastDistance < currentFrameBlob.dblCurrentDiagonalSize * 0.5)
 		{
 			addBlobToExistingBlobs(currentFrameBlob, existingBlobs, intIndexOfLeastDistance);
+			cout << "x = " << currentFrameBlob.currentBoundingRect.x << ",y = " << currentFrameBlob.currentBoundingRect.y << ", is old object" << endl;
 		}
 		else
 		{
 			addNewBlob(currentFrameBlob, existingBlobs);
+			cout << "x = " << currentFrameBlob.currentBoundingRect.x << ",y = " << currentFrameBlob.currentBoundingRect.y << ", is new object" << endl;
 		}
 
 	}
@@ -530,4 +536,15 @@ void assignCarDetectedForRect(Mat rootMat, Rect frameDetect, vector<Rect> &total
 		totalRectCars.at(i).x += frameDetect.x;
 		totalRectCars.at(i).y += frameDetect.y;
 	}
+}
+
+
+void printInfo(vector<Blob> blobs, string info)
+{
+	cout << info << endl;
+	for (int i = 0; i < blobs.size(); ++i)
+	{
+		cout << "x: " << blobs.at(i).currentBoundingRect.x << ",y:" << blobs.at(i).currentBoundingRect.y << endl;
+	}
+	cout << "end of " << info << endl;
 }

@@ -1,4 +1,3 @@
 ﻿  main.cpp
-c:\users\toan\documents\visual studio 2015\projects\detectcarsubtraction1\detectcarsubtraction1\getrectmoving.h(467): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  DetectCarSubtraction1.vcxproj -> C:\Users\toan\documents\visual studio 2015\Projects\DetectCarSubtraction1\x64\Debug\DetectCarSubtraction1.exe
-  DetectCarSubtraction1.vcxproj -> C:\Users\toan\documents\visual studio 2015\Projects\DetectCarSubtraction1\x64\Debug\DetectCarSubtraction1.pdb (Full PDB)
+e:\ubuntu\visual studio 2015\projects\detectcarsubtraction1\detectcarsubtraction1\detectcarandmotobike.h(486): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  DetectCarSubtraction1.vcxproj -> E:\ubuntu\Visual Studio 2015\Projects\DetectCarSubtraction1\x64\Debug\DetectCarSubtraction1.exe
