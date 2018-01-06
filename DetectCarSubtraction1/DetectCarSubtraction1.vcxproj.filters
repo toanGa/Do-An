@@ -153,6 +153,15 @@
     <ClInclude Include="getRectMoving.h">
       <Filter>NeronNetwork</Filter>
     </ClInclude>
+    <ClInclude Include="config_data.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="assign_locate.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Obj\Shape</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -181,6 +190,12 @@
     </ClCompile>
     <ClCompile Include="mp4Export.cpp">
       <Filter>Obj\VideoWriter</Filter>
+    </ClCompile>
+    <ClCompile Include="assign_locate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

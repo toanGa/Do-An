@@ -10,9 +10,10 @@
 #include "opencv2/objdetect.hpp"
 #include<iostream>
 #include<conio.h>           // it may be necessary to change or remove this line if not using Windows
-
+#include"assign_locate.h"
 #include "Blob.h"
 #include"mp4Export.h"
+#include <sstream>
 #define SHOW_STEPS            // un-comment or comment this line to show steps or not
 #include <string.h>
 // global variables ///////////////////////////////////////////////////////////////////////////////
@@ -23,6 +24,7 @@ const cv::Scalar SCALAR_GREEN = cv::Scalar(0.0, 200.0, 0.0);
 const cv::Scalar SCALAR_RED = cv::Scalar(0.0, 0.0, 255.0);
 
 // function prototypes ////////////////////////////////////////////////////////////////////////////
+// will calc speed of car
 void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs);
 void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex);
 void addNewBlob(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs);
@@ -38,6 +40,8 @@ void drawListBlobToMat(Mat &mat, vector<Blob> listBlob);
 void assignCarDetectedForRect(Mat rootMat, Rect frameDetect, vector<Rect> &totalRectCars);
 
 void printInfo(vector<Blob> blobs, string info);
+double getSpeed(Point oldImgPoint, Point newImgPoint);
+
 
 String cars_cascade_name = "cars.xml";
 CascadeClassifier cars_cascade;
@@ -299,7 +303,9 @@ void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std
 			if (existingBlobs[i].blnStillBeingTracked == true)
 			{
 
-				double dblDistance = distanceBetweenPoints(currentFrameBlob.centerPositions.back(), existingBlobs[i].predictedNextPosition);
+				double dblDistance = 
+					distanceBetweenPoints(currentFrameBlob.centerPositions.back(),
+						existingBlobs[i].predictedNextPosition);
 
 				if (dblDistance < dblLeastDistance)
 				{
@@ -311,8 +317,20 @@ void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std
 
 		if (dblLeastDistance < currentFrameBlob.dblCurrentDiagonalSize * 0.5)
 		{
+			int xNew, yNew, xOld, yOld;
+			xNew = currentFrameBlob.centerPositions.back().x;
+			yNew = currentFrameBlob.centerPositions.back().y;
+			xOld = existingBlobs[intIndexOfLeastDistance].centerPositions.back().x;
+			yOld = existingBlobs[intIndexOfLeastDistance].centerPositions.back().y;
+			currentFrameBlob.speed = getSpeed(existingBlobs[intIndexOfLeastDistance].centerPositions.back(), 
+				currentFrameBlob.centerPositions.back());
+			cout << "x = "
+				<< currentFrameBlob.currentBoundingRect.x << ",y = "
+				<< currentFrameBlob.currentBoundingRect.y <<
+				", is old object; old is xOld = " << xOld << ",yOld = " << yOld << endl;
 			addBlobToExistingBlobs(currentFrameBlob, existingBlobs, intIndexOfLeastDistance);
-			cout << "x = " << currentFrameBlob.currentBoundingRect.x << ",y = " << currentFrameBlob.currentBoundingRect.y << ", is old object" << endl;
+
+			
 		}
 		else
 		{
@@ -433,7 +451,6 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy)
 {
-
 	for (unsigned int i = 0; i < blobs.size(); i++)
 	{
 
@@ -445,7 +462,16 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy)
 			double dblFontScale = blobs[i].dblCurrentDiagonalSize / 60.0;
 			int intFontThickness = (int)std::round(dblFontScale * 1.0);
 
-			cv::putText(imgFrame2Copy, std::to_string(i), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, intFontThickness);
+			//ostringstream streamObj;
+			//streamObj << std::fixed;
+			//streamObj << std::setprecision(2);
+			//stream << fixed << std::setprecision(2) << blobs[i].speed;
+			//string s = stream.str();
+			//string index = to_string(i);
+			cv::putText(imgFrame2Copy, 
+				std::to_string(i) + std::to_string((long long)blobs[i].speed),
+				blobs[i].centerPositions.back(),
+				intFontFace, dblFontScale, SCALAR_GREEN, intFontThickness);
 		}
 	}
 }
@@ -538,7 +564,7 @@ void assignCarDetectedForRect(Mat rootMat, Rect frameDetect, vector<Rect> &total
 	}
 }
 
-
+// print infomation on screen
 void printInfo(vector<Blob> blobs, string info)
 {
 	cout << info << endl;
@@ -547,4 +573,15 @@ void printInfo(vector<Blob> blobs, string info)
 		cout << "x: " << blobs.at(i).currentBoundingRect.x << ",y:" << blobs.at(i).currentBoundingRect.y << endl;
 	}
 	cout << "end of " << info << endl;
+}
+
+// get real speed
+double getSpeed(Point oldImgPoint, Point newImgPoint)
+{
+	double timeBetween2Frame = 1.0 / 16;
+	//oldImgPoint = getRealPoint(oldImgPoint);
+	//newImgPoint = getRealPoint(newImgPoint);
+	double distance = 
+		distanceBetweenPoints(oldImgPoint, newImgPoint);
+	return distance / timeBetween2Frame;
 }

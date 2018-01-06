@@ -33,6 +33,7 @@ public:
 	Blob(std::vector<cv::Point> _contour);
 	void predictNextPosition(void);
 
+	double speed;
 };
 
 #endif    // MY_BLOB

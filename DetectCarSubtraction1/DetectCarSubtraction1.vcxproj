@@ -19,8 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assign_locate.h" />
     <ClInclude Include="Blob.h" />
     <ClInclude Include="cannyTimbienanh.h" />
+    <ClInclude Include="config_data.h" />
     <ClInclude Include="CountWhiteValue.h" />
     <ClInclude Include="CountWhiteVanTay.h" />
     <ClInclude Include="Defines.h" />
@@ -37,6 +39,7 @@
     <ClInclude Include="FindPixel10x10.h" />
     <ClInclude Include="getRectMoving.h" />
     <ClInclude Include="getValMaxInstance.h" />
+    <ClInclude Include="Line.h" />
     <ClInclude Include="MovingDetect.hpp" />
     <ClInclude Include="mp4Export.h" />
     <ClInclude Include="phanTichThongKe.h" />
@@ -50,12 +53,14 @@
     <ClInclude Include="testTrackMotobikeAndCar.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="assign_locate.cpp" />
     <ClCompile Include="Blob.cpp" />
     <ClCompile Include="CountWhiteValue.cpp" />
     <ClCompile Include="DetectBinary.cpp" />
     <ClCompile Include="DetectGray.cpp" />
     <ClCompile Include="DetectMotobike.cpp" />
     <ClCompile Include="getValMaxInstance.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mp4Export.cpp" />
     <ClCompile Include="RestoreBackground.cpp" />
